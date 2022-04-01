@@ -1,3 +1,20 @@
+const createSitemapRoutes = async () => {
+  const { $content } = require('@nuxt/content');
+
+  const routes = [];
+  const projects = await $content().fetch();
+
+  if (projects && projects.length > 0) {
+    projects.forEach((project) => {
+      routes.push({
+        url: project.path,
+        lastmod: project.updatedAt,
+      });
+    });
+  }
+  return routes;
+};
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -38,6 +55,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    '@nuxtjs/sitemap',
   ],
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
@@ -53,5 +71,14 @@ export default {
         autoprefixer: {},
       },
     },
+  },
+  sitemap: {
+    // hostname: 'http://localhost:3000',
+    gzip: true,
+    defaults: {
+      changefreq: 'weekly',
+      priority: 1,
+    },
+    routes: createSitemapRoutes,
   },
 };
