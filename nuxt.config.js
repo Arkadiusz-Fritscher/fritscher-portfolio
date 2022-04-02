@@ -21,7 +21,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'portfolio-22',
+    title: 'Arkadiusz Fritscher - Frontend Developer',
     htmlAttrs: {
       lang: 'en',
     },

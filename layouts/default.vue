@@ -1,9 +1,8 @@
 <template>
-  <div>
-    <header>header</header>
-    <main>
-      <Nuxt />
-    </main>
+  <div class="wrapper">
+    <TheNavbar />
+    <TheHeader />
+    <Nuxt />
     <footer>footer</footer>
   </div>
 </template>

@@ -1,5 +1,7 @@
 <template>
-  <div>Main Content</div>
+  <main>
+    <TheProjects />
+  </main>
 </template>
 
 <script>

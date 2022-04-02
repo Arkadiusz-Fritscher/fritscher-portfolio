@@ -1,0 +1,46 @@
+:root {
+  --space-2xl: clamp(5rem, 2.833rem + 8.889vw, 13.5rem);
+  --space-xl: clamp(4.5rem, 2.843rem + 6.797vw, 11rem);
+  --space-lg: clamp(3rem, 1.725rem + 5.229vw, 8rem);
+  --space-md: clamp(2rem, 1.235rem + 3.137vw, 5rem);
+  --space-sm: clamp(1.5rem, 1.118rem + 1.569vw, 3rem);
+
+  --text-hero: clamp(2.5rem, 1.48rem + 4.183vw, 6.5rem);
+  --text-h1: clamp(2rem, 1.618rem + 1.569vw, 3.5rem);
+  --text-h2: clamp(1.5rem, 1.373rem + 0.523vw, 2rem);
+  --text-body: clamp(1rem, 0.873rem + 0.523vw, 1.5rem);
+  --text-caption: clamp(0.875rem, 0.843rem + 0.131vw, 1rem);
+
+  --color-black: #333333;
+  --color-white: #fafafa;
+
+  --wrapper-gap: clamp(1rem, -1.597rem + 10.654vw, 11.188rem);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  height: 100%;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-columns: 100%;
+  min-height: 100%;
+  margin: 0;
+  font-size: var(--text-base);
+  color: var(--color-black);
+  background-color: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'system-ui',
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+.wrapper {
+  padding-inline: var(--wrapper-gap, 16px);
+  margin-inline: auto;
+  max-width: 1920px;
+}
