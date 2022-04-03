@@ -1,7 +1,12 @@
 ---
-title: This is the second project
+title: CSS Clamp Generator
 description: 'Empower your NuxtJS application with @nuxt/content module: write in a content/ directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a Git-based Headless CMS.'
-slug: 'second'
+slug: 'clamp-generator'
+order: 2
+services:
+  - Design
+  - Development
+thumbnail: 'kasper-rasmussen-ecryPq45-_g-unsplash'
 ---
 
 Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.

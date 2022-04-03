@@ -1,5 +1,6 @@
 <template>
   <main>
+    <BaseSectionTitle> Work </BaseSectionTitle>
     <TheProjects />
   </main>
 </template>
