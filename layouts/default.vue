@@ -1,8 +1,14 @@
+<script>
+export default {
+  name: 'DefaultLayout',
+};
+</script>
+
 <template>
-  <div class="wrapper">
+  <div>
     <TheNavbar />
     <TheHeader />
     <Nuxt />
-    <footer>footer</footer>
+    <TheFooter />
   </div>
 </template>

@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-  <header class="mb-2xl">
+  <header class="wrapper mb-2xl">
     <div class="mb-lg">
       <h1 class="mb-4 text-hero font-semibold">
         Im a Self Taught Frontend Developer base in Mainz, Germany.

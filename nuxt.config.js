@@ -41,7 +41,9 @@ export default {
   plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: {
+    dirs: ['~/components', '~/components/base', '~/components/icons'],
+  },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -72,6 +74,8 @@ export default {
       },
     },
   },
+
+  // Nuxt Content Sitemap
   sitemap: {
     // hostname: 'http://localhost:3000',
     gzip: true,
@@ -80,5 +84,10 @@ export default {
       priority: 1,
     },
     routes: createSitemapRoutes,
+  },
+
+  // Nuxt Router
+  router: {
+    linkExactActiveClass: 'active',
   },
 };

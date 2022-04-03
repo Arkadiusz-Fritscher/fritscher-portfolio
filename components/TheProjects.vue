@@ -27,6 +27,17 @@ export default {
         });
       });
   },
+
+  methods: {
+    formatDate(date) {
+      const formattedDate = new Date(date).toLocaleDateString('de-DE', {
+        month: 'long',
+        year: 'numeric',
+      });
+
+      return formattedDate;
+    },
+  },
 };
 </script>
 
@@ -34,7 +45,9 @@ export default {
   <section id="work">
     <!-- Project Cart -->
     <div v-for="project in projects" :key="project.slug" class="project mb-xl">
-      <div class="project__date text-caption">{{ project.updatedAt }}</div>
+      <div class="project__date text-caption">
+        {{ formatDate(project.updatedAt) }}
+      </div>
       <div class="project__title text-h1 font-semibold">
         {{ project.title }}
       </div>
@@ -49,7 +62,7 @@ export default {
         class="project__thumbnail aspect-[3/4] bg-black desktop:aspect-[4/3]"
       >
         <router-link
-          :to="{ path: `/${project.slug}` }"
+          :to="{ name: 'slug', params: { slug: project.slug } }"
           class="block h-full w-full"
         >
           <img
@@ -58,10 +71,13 @@ export default {
             :alt="project.title"
           />
         </router-link>
-        <!-- <img :src="project.thumbnail" alt="{{ project.title }}" /> -->
       </div>
       <div class="project__description">{{ project.description }}</div>
-      <div class="project__link">{{ project.link }}</div>
+      <div class="project__link">
+        <BaseTextLink :to="{ name: 'slug', params: { slug: project.slug } }">
+          View Project details
+        </BaseTextLink>
+      </div>
     </div>
   </section>
 </template>
@@ -79,7 +95,7 @@ export default {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr auto auto auto auto 1fr;
   grid-auto-rows: 1fr;
-  gap: 0px 0px;
+  gap: 0.5rem 0px;
   grid-auto-flow: row;
   grid-template-areas:
     'date'
@@ -129,7 +145,7 @@ export default {
     grid-template-rows: 1fr auto auto auto 1fr;
     align-items: end;
     grid-auto-rows: 1fr;
-    gap: 0px 80px;
+    gap: 1rem 2rem;
     grid-auto-flow: row;
     grid-template-areas:
       'thumbnail date'

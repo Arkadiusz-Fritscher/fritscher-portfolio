@@ -1,7 +1,9 @@
 <template>
-  <main>
+  <main class="wrapper">
     <BaseSectionTitle> Work </BaseSectionTitle>
     <TheProjects />
+    <BaseSectionTitle> About </BaseSectionTitle>
+    <TheAbout />
   </main>
 </template>
 

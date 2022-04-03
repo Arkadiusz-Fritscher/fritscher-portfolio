@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-  <nav class="mb-xl flex items-center justify-between py-sm">
+  <nav class="wrapper mb-xl flex items-center justify-between py-sm">
     <!-- Logo -->
     <div class="text-caption font-semibold">
       <router-link to="/">Arkadiusz Fritscher</router-link>
