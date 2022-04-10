@@ -5,18 +5,21 @@ export default {
 </script>
 
 <template>
-  <header class="wrapper mb-2xl">
-    <div class="mb-lg">
-      <h1 class="mb-4 text-hero font-semibold">
-        Im a Self Taught Frontend Developer base in Mainz, Germany.
-      </h1>
-      <h2>
-        Who's currently looking for an opportunity as a Full-Time Developer.
-      </h2>
-    </div>
-
-    <div class="aspect-video bg-black"></div>
+  <header class="flex justify-center">
+    <h1 class="hero__text text-hero font-semibold sm:text-center">
+      Self Taught Frontend Developer based in Mainz
+    </h1>
   </header>
 </template>
 
-<style scoped></style>
+<style scoped>
+.hero__text {
+  margin-top: calc(226.176px + 1.553vw); /* fallback */
+  margin-top: clamp(14.5rem, 14.136rem + 1.553vw, 16rem);
+
+  margin-bottom: calc(38.784px + 2.46vw); /* fallback */
+  margin-bottom: clamp(3rem, 2.424rem + 2.46vw, 5.375rem);
+
+  max-width: 22ch;
+}
+</style>

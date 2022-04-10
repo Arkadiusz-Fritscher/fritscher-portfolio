@@ -5,10 +5,9 @@ export default {
 </script>
 
 <template>
-  <div>
+  <div class="wrapper">
     <TheNavbar />
     <TheHeader />
     <Nuxt />
-    <TheFooter />
   </div>
 </template>

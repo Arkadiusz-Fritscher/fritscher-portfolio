@@ -5,29 +5,29 @@ export default {
 </script>
 
 <template>
-  <nav class="wrapper mb-xl flex items-center justify-between py-sm">
+  <nav class="flex items-center justify-between bg-white pt-8 pb-6">
     <!-- Logo -->
-    <div class="text-caption font-semibold">
-      <router-link to="/">Arkadiusz Fritscher</router-link>
+    <div class="logo">
+      <router-link to="/">Fritscher</router-link>
     </div>
 
     <!-- Mobile menu button -->
     <div class="sm:hidden">icon</div>
 
     <!-- Tablet and desktop menu -->
-    <ul class="hidden text-caption font-semibold sm:flex">
+    <ul class="hidden space-x-10 sm:flex sm:items-center">
       <li>
-        <router-link :to="{ path: '/', hash: '#work' }" class="nav__link"
+        <router-link :to="{ path: '/', hash: '#work' }" class="link"
           >Work</router-link
         >
       </li>
       <li>
-        <router-link :to="{ path: '/', hash: '#about' }" class="nav__link"
+        <router-link :to="{ path: '/', hash: '#about' }" class="link"
           >About</router-link
         >
       </li>
       <li>
-        <router-link :to="{ path: '/', hash: '#contact' }" class="nav__link"
+        <router-link :to="{ path: '/', hash: '#contact' }" class="link"
           >Contact</router-link
         >
       </li>
@@ -36,8 +36,15 @@ export default {
 </template>
 
 <style scoped>
-.nav__link {
-  padding-inline: 0.5rem;
+.logo {
+  font-size: clamp(1.25rem, 1.189rem + 0.259vw, 1.5rem);
+  font-weight: 600;
+}
+
+.link {
+  display: block;
+  font-weight: 600;
   text-transform: uppercase;
+  font-size: var(--text-caption);
 }
 </style>

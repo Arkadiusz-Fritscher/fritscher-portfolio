@@ -1,20 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600&display=swap');
 :root {
-  --space-2xl: clamp(5rem, 2.833rem + 8.889vw, 13.5rem);
+  /* --space-2xl: clamp(5rem, 2.833rem + 8.889vw, 13.5rem);
   --space-xl: clamp(4.5rem, 2.843rem + 6.797vw, 11rem);
   --space-lg: clamp(3rem, 1.725rem + 5.229vw, 8rem);
   --space-md: clamp(2rem, 1.235rem + 3.137vw, 5rem);
-  --space-sm: clamp(1.5rem, 1.118rem + 1.569vw, 3rem);
+  --space-sm: clamp(1.5rem, 1.118rem + 1.569vw, 3rem); */
 
-  --text-hero: clamp(2.5rem, 1.48rem + 4.183vw, 6.5rem);
-  --text-h1: clamp(2rem, 1.618rem + 1.569vw, 3.5rem);
-  --text-h2: clamp(1.5rem, 1.373rem + 0.523vw, 2rem);
-  --text-body: clamp(1rem, 0.873rem + 0.523vw, 1.5rem);
-  --text-caption: clamp(0.875rem, 0.843rem + 0.131vw, 1rem);
+  --text-hero: clamp(2rem, 0.908rem + 4.66vw, 6.5rem);
+  --text-callout: clamp(1.813rem, 0.948rem + 3.689vw, 5.375rem);
+  --text-h1: clamp(1.5rem, 0.969rem + 2.265vw, 3.688rem);
+  --text-h2: clamp(1.25rem, 0.947rem + 1.294vw, 2.5rem);
+  --text-h3: clamp(1.125rem, 0.913rem + 0.906vw, 2rem);
+  --text-body: clamp(1rem, 0.803rem + 0.841vw, 1.813rem);
+  --text-caption: clamp(0.875rem, 0.845rem + 0.129vw, 1rem);
 
-  --color-black: #333333;
-  --color-white: #fafafa;
-
-  --wrapper-gap: clamp(1rem, -1.597rem + 10.654vw, 11.188rem);
+  --color-black: #0f0f0f;
+  --color-white: #fcfcfc;
+  --color-body: #4d4d4d;
 }
 
 html {
@@ -34,13 +36,46 @@ body {
   background-color: var(--color-white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'system-ui',
+  font-family: Syne, Inter, ui-sans-serif, system-ui, -apple-system, 'system-ui',
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
 .wrapper {
-  padding-inline: var(--wrapper-gap, 16px);
+  padding-inline: clamp(1.5rem, 0.044rem + 6.214vw, 7.5rem);
   margin-inline: auto;
   max-width: 1920px;
+}
+
+/* Links */
+.link {
+  position: relative;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--color-black);
+  transform: scaleX(0);
+  transition: transform 0.2s cubic-bezier(0.06, 0.58, 0.95, 0.58);
+  transform-origin: right;
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Typography */
+.text-hero,
+.text-callout,
+.text-h1,
+.text-h2,
+.text-h3,
+.text-caption {
+  font-weight: 600;
 }
