@@ -90,4 +90,8 @@ export default {
   router: {
     linkExactActiveClass: 'active',
   },
+
+  server: {
+    host: '0.0.0.0', // default: localhost,
+  },
 };
