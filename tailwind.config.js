@@ -12,49 +12,49 @@ module.exports = {
         'var(--text-hero)',
         {
           letterSpacing: '-0.03em',
-          lineHeight: '120%',
+          lineHeight: '1.2',
         },
       ],
       callout: [
         'var(--text-callout)',
         {
           letterSpacing: '-0.02em',
-          lineHeight: '130%',
+          lineHeight: '1.3',
         },
       ],
       h1: [
         'var(--text-h1)',
         {
-          // letterSpacing: '-0.01em',
-          lineHeight: '130%',
+          letterSpacing: '-0.02em',
+          lineHeight: '1.1',
         },
       ],
       h2: [
         'var(--text-h2)',
         {
           // letterSpacing: '-0.02em',
-          lineHeight: '130%',
+          lineHeight: '1.3',
         },
       ],
       h3: [
         'var(--text-h3)',
         {
           // letterSpacing: '-0.02em',
-          lineHeight: '130%',
+          lineHeight: '1.3',
         },
       ],
       body: [
         'var(--text-body)',
         {
           letterSpacing: '0.01em',
-          lineHeight: '150%',
+          lineHeight: '1.5',
         },
       ],
       caption: [
         'var(--text-caption)',
         {
           letterSpacing: '0.01em',
-          lineHeight: '120%',
+          lineHeight: '1.2',
         },
       ],
     },

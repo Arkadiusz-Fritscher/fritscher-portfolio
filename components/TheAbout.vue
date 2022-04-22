@@ -1,81 +1,125 @@
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      skills: [
+        {
+          type: 'Developing',
+          headline: 'Technologien die mit denen ich bis jezt gearbeitet habe',
+          list: [
+            'Javascript',
+            'Vue 2 & Vue 3',
+            'Nuxt.js',
+            'Tailwind.css',
+            'HTML',
+            'CSS / SASS',
+          ],
+          info: 'Die meisten meiner Projekte erstelle ich mit Vue.js, bin aber auch für andere Frameworks offen.',
+        },
+        {
+          type: 'Design',
+          headline: 'Tools mit denen ich vertraut bin.',
+          list: ['Figma', 'Photoshop', 'Illustrator'],
+          info: 'Ich erstelle zwar Designs für meine Persöhnlichen Projekte, würde mich allerdings nicht als Designer bezeichnen. Den Design ist so viel mehr als nur hübsches aussehen.',
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <template>
   <section id="about">
-    <article class="callout">
-      <h2 class="text-callout">
-        My goal is to work as a full-time Frontend developer on exciting
-        projects and learn new things.
-      </h2>
-    </article>
-    <article class="about flex flex-wrap">
-      <div class="about__headline">
-        <h3 class="text-h1">Was lange nur ein Traum war</h3>
-      </div>
-      <div class="about__image">
-        <img src="@/assets/img/florian-krumm-euZ2n8dGUcQ-unsplash.jpg" alt="" />
-      </div>
-      <div class="about__text">
-        <p class="text-body text-lighter">
-          Hi, ich bin der Arkadiusz Fritscher und komme aus der Nähe von Mainz.
-          Neben meinem Hauptberuf als Anlagenmechaniker SHK und Vater von zwei
-          kleinen Kindern lerne ich in meiner Freizeit Programmieren und setzte
-          das gelernte in eigenen Projekten um. Mein Focus liegt dabei im
-          Frontend und besonders im UI.
-        </p>
+    <BaseCallout
+      >My goal is to work as a full-time Frontend developer on exciting projects
+      and learn new things.
+    </BaseCallout>
+
+    <article class="about">
+      <div class="about__text__container">
+        <div class="about__wrapper" data-scroll="sticky">
+          <h3 class="about__headline text-h1">
+            Hier steht eine total aussagekräftige Überschrift
+          </h3>
+
+          <p class="about__body text-body text-lighter">
+            Hi, ich bin der Arkadiusz Fritscher und komme aus der Nähe von
+            Mainz. Neben meinem Hauptberuf als Anlagenmechaniker SHK und Vater
+            von zwei kleinen Kindern lerne ich in meiner Freizeit Programmieren
+            und setzte das gelernte in eigenen Projekten um. Mein Focus liegt
+            dabei im Frontend.
+          </p>
+
+          <div class="about__cta">
+            <button class="btn btn--full">contact me</button>
+          </div>
+        </div>
       </div>
 
-      <div class="about__cta">
-        <button>contact me</button>
+      <div class="about__image__container">
+        <img
+          src="@/assets/img/florian-krumm-euZ2n8dGUcQ-unsplash.jpg"
+          alt="Nicht Arkadiusz Fritscher"
+          class="about__image"
+        />
       </div>
     </article>
+
+    <BaseSkills
+      v-for="skill in skills"
+      :key="skill.type"
+      :headline="skill.headline"
+      :type="skill.type"
+      :info="skill.info"
+      :list="skill.list"
+    />
   </section>
 </template>
 
 <style scoped>
 #about {
-  margin-block-start: clamp(9rem, 6.209rem + 11.909vw, 20.5rem);
-  margin-block-end: clamp(9rem, 6.209rem + 11.909vw, 20.5rem);
 }
 
-.callout {
-  display: flex;
-  justify-content: center;
-  padding-inline: clamp(0.5rem, -1.229rem + 7.379vw, 7.625rem);
-  margin-block-end: clamp(6rem, 3.209rem + 11.909vw, 17.5rem);
+/* ABOUT */
+
+.about > div {
+  flex: 1 1 100%;
 }
 
 .about {
   display: flex;
-  flex-direction: column;
-  row-gap: 1rem;
+  flex-wrap: wrap;
+  gap: var(--wrapper-gap-x) var(--wrapper-gap-y);
+  margin-block-end: var(--section-space-80);
 }
 
-@media screen(tablet) {
-  .about {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(2, auto) 1fr;
-    gap: 24px 57px;
-    grid-template-areas:
-      'image title'
-      'image text'
-      'image cta';
+.about__headline {
+  margin-block-end: var(--text-space-16);
+  max-width: 30ch;
+}
+
+.about__body {
+  margin-block-end: var(--text-space-8);
+}
+
+.about__cta {
+  max-width: 40ch;
+}
+
+/* @media screen(tablet) { */
+@media (min-width: 52.125em) {
+  .about > div {
+    flex: 1 1 calc(50% - var(--wrapper-gap-x));
   }
 
-  .about__title {
-    grid-area: title;
+  .about {
+    flex-direction: row-reverse;
   }
-  .about__text {
-    grid-area: text;
-  }
-  .about__image {
-    grid-area: image;
-  }
-  .about__cta {
-    grid-area: cta;
+
+  [data-scroll='sticky'] {
+    position: sticky;
+    top: 5%;
+    z-index: 1;
   }
 }
 </style>

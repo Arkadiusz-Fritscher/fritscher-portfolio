@@ -18,7 +18,7 @@ export default {
         'services',
         'thumbnail',
       ])
-      .sortBy('order', '')
+      .sortBy('order', 'desc')
       .fetch()
       .catch(() => {
         this.error({
@@ -28,9 +28,68 @@ export default {
       });
   },
 
+  mounted() {
+    this.workIntersectionHandler();
+  },
+
   methods: {
     formatServices(services) {
       return services.join(', ');
+    },
+
+    customCursor(mode) {
+      const workCards = document.querySelectorAll('.project > a');
+      if (workCards.length > 0) {
+        workCards.forEach((card) => {
+          if (mode === 'add') {
+            card.addEventListener('mouseenter', this.onMouseEnter, true);
+            card.addEventListener('mouseleave', this.onMouseLeave, true);
+          } else {
+            card.removeEventListener('mouseenter', this.onMouseEnter, true);
+            card.removeEventListener('mouseleave', this.onMouseLeave, true);
+          }
+        });
+      }
+    },
+
+    onMouseEnter(e) {
+      e.target.addEventListener('mousemove', this.onMouseMove);
+      this.$refs.workCursor.classList.add('show-cursor');
+    },
+
+    onMouseLeave(e) {
+      this.$refs.workCursor.classList.remove('show-cursor');
+      e.target.removeEventListener('mousemove', this.onMouseMove);
+    },
+
+    onMouseMove(e) {
+      const x = e.layerX;
+      const y = e.layerY;
+
+      this.$refs.workCursor.style.left = `${x}px`;
+      this.$refs.workCursor.style.top = `${y}px`;
+    },
+
+    workIntersectionHandler(target = document.querySelector('#work')) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              console.log('Intersecting');
+              this.customCursor('add');
+            } else {
+              this.customCursor();
+              this.$refs.workCursor.classList.remove('show-cursor');
+            }
+          });
+        },
+        {
+          rootMargin: '0px',
+          threshold: 0,
+        }
+      );
+
+      observer.observe(target);
     },
   },
 };
@@ -38,7 +97,12 @@ export default {
 
 <template>
   <section id="work" class="work">
-    <article v-for="project in projects" :key="project.slug">
+    <div ref="workCursor" class="work-cursor">
+      <span class="text-center font-semibold uppercase"
+        >watch full project</span
+      >
+    </div>
+    <article v-for="project in projects" :key="project.slug" class="project">
       <router-link :to="{ name: 'slug', params: { slug: project.slug } }">
         <figure>
           <picture>
@@ -80,6 +144,10 @@ export default {
 </template>
 
 <style scoped>
+.work-cursor {
+  display: none;
+}
+
 .thumbnail {
   max-inline-size: 100%;
   block-size: auto;
@@ -99,18 +167,49 @@ export default {
   flex: 1 1 100%;
 }
 
-@media screen(sm) {
-  .work > article,
-  .work article:nth-last-child(-n + 2) {
+.project > a {
+  display: block;
+}
+
+@media (min-width: 800px) {
+  .work > article {
     flex: 1 1 46%;
   }
-
-  .work > article:nth-child(3n + 1) {
+  .work > article:first-of-type {
     flex: 1 1 100%;
   }
 
   .thumbnail {
-    aspect-ratio: auto 16 / 9;
+    aspect-ratio: 4 / 3;
+  }
+
+  .work > article:first-of-type .thumbnail {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (pointer: fine) {
+  .work-cursor {
+    display: none;
+    position: absolute;
+    width: min-content;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-color: var(--color-black);
+    font-size: var(--text-body);
+    padding: var(--text-body);
+    color: var(--color-white);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    line-height: 1;
+    transition: all 0s ease-in-out;
+  }
+
+  .show-cursor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: crosshair;
   }
 }
 </style>

@@ -9,5 +9,6 @@ export default {
     <TheNavbar />
     <TheHeader />
     <Nuxt />
+    <TheFooter />
   </div>
 </template>

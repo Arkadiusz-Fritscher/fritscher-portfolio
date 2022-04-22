@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&display=swap');
+
 :root {
   /* --space-2xl: clamp(5rem, 2.833rem + 8.889vw, 13.5rem);
   --space-xl: clamp(4.5rem, 2.843rem + 6.797vw, 11rem);
@@ -17,12 +18,31 @@
   --color-black: #0f0f0f;
   --color-white: #fcfcfc;
   --color-body: #4d4d4d;
+
+  --wrapper-gap-x: clamp(1.5rem, 0.999rem + 2.136vw, 3.563rem);
+  --wrapper-gap-y: clamp(2.5rem, 2.242rem + 1.1vw, 3.563rem);
+
+  /* 4-8px */
+  --text-space-4: clamp(0.25rem, 0.561rem + -0.259vw, 0.5rem);
+  /* 8-16px */
+  --text-space-8: clamp(0.5rem, 0.379rem + 0.518vw, 1rem);
+  /* 16-24px */
+  --text-space-16: clamp(1rem, 0.879rem + 0.518vw, 1.5rem);
+  /* 24-32px */
+  --text-space-24: clamp(1.5rem, 1.379rem + 0.518vw, 2rem);
+  /* 32-40px */
+  --text-space-32: clamp(2rem, 1.879rem + 0.518vw, 2.5rem);
+
+  --section-space-80: clamp(5rem, 1.966rem + 12.945vw, 17.5rem);
+  --section-space-96: clamp(6rem, 3.209rem + 11.909vw, 17.5rem);
+  --section-space-104: clamp(6.5rem, 3.102rem + 14.498vw, 20.5rem);
 }
 
 html {
   box-sizing: border-box;
   font-size: 16px;
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -31,7 +51,7 @@ body {
   grid-template-columns: 100%;
   min-height: 100%;
   margin: 0;
-  font-size: var(--text-base);
+  font-size: var(--text-body);
   color: var(--color-black);
   background-color: var(--color-white);
   -webkit-font-smoothing: antialiased;
@@ -70,6 +90,39 @@ body {
   transform-origin: left;
 }
 
+/* Buttons  */
+
+.btn {
+  padding-inline: var(--text-space-32);
+  padding-block: var(--text-space-8);
+  margin-block: var(--text-space-8);
+  min-width: 4.25rem;
+  border: clamp(0.063rem, 0.026rem + 0.155vw, 0.125rem) solid var(--color-black);
+  color: var(--color-black);
+  background-color: var(--color-white);
+  font-size: var(--text-caption);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  transform: scale(1);
+  transition-property: color, background-color;
+  transition-timing-function: cubic-bezier(0.53, 0.09, 0.46, 0.91);
+  transition-duration: 0.3s;
+}
+
+.btn:hover {
+  color: var(--color-white);
+  background-color: var(--color-black);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn--full {
+  width: 100%;
+}
+
 /* Typography */
 .text-hero,
 .text-callout,
@@ -78,4 +131,8 @@ body {
 .text-h3,
 .text-caption {
   font-weight: 600;
+}
+
+p {
+  max-width: 58ch;
 }
