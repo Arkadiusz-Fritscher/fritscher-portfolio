@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <main>
-      <Nuxt />
-    </main>
-    <footer>footer</footer>
+  <div class="wrapper">
+    <Nuxt />
+    <TheFooter />
   </div>
 </template>

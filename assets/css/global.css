@@ -12,7 +12,7 @@
   --text-h1: clamp(1.5rem, 0.969rem + 2.265vw, 3.688rem);
   --text-h2: clamp(1.25rem, 0.947rem + 1.294vw, 2.5rem);
   --text-h3: clamp(1.125rem, 0.913rem + 0.906vw, 2rem);
-  --text-body: clamp(1rem, 0.803rem + 0.841vw, 1.813rem);
+  --text-body: clamp(1rem, 0.939rem + 0.259vw, 1.25rem);
   --text-caption: clamp(0.875rem, 0.845rem + 0.129vw, 1rem);
 
   --color-black: #0f0f0f;
@@ -108,6 +108,9 @@ body {
   transition-property: color, background-color;
   transition-timing-function: cubic-bezier(0.53, 0.09, 0.46, 0.91);
   transition-duration: 0.3s;
+  text-align: center;
+  display: block;
+  max-inline-size: 55ch;
 }
 
 .btn:hover {

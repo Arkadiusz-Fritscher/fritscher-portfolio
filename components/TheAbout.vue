@@ -95,11 +95,12 @@ export default {
 
 .about__headline {
   margin-block-end: var(--text-space-16);
-  max-width: 30ch;
+  max-width: 34ch;
 }
 
 .about__body {
   margin-block-end: var(--text-space-8);
+  max-inline-size: 55ch;
 }
 
 .about__cta {

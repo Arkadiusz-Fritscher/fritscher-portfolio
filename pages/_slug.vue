@@ -1,4 +1,5 @@
 <script>
+import formatDate from '@/utils/formatDate.js';
 export default {
   name: 'ProjectPage',
   layout: 'project',
@@ -55,15 +56,35 @@ export default {
       ],
     };
   },
+
+  computed: {
+    formattedDate() {
+      return formatDate(
+        this.project.date ? this.project.date : this.project.createdAt
+      );
+    },
+  },
+
+  mounted() {
+    console.log(this.project);
+  },
 };
 </script>
 
 <template>
   <div id="project">
-    <pre>
-      {{ project }}
-    </pre>
-    <nuxt-content :document="project"> </nuxt-content>
+    <WorkHeader
+      :description="project.description"
+      :title="project.title"
+      :services="project.services"
+      :stack="project.stack"
+      :links="project.links"
+      :date="formattedDate"
+    />
+    <!-- <pre>{{ project }}</pre> -->
+    <article class="content">
+      <nuxt-content :document="project" tag="article"> </nuxt-content>
+    </article>
   </div>
 </template>
 
