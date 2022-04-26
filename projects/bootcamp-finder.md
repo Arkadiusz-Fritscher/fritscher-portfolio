@@ -26,6 +26,13 @@ coverImage: 'kasper-rasmussen-ecryPq45-_g-unsplash'
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque possimus corrupti error, culpa commodi id sapiente deserunt nihil, non unde esse exercitationem quam odio ratione veritatis maiores, quibusdam praesentium porro a voluptatibus facere eum nesciunt perferendis.
 </work-image-with-text>
 
+<work-image url="desktop@2x.jpg"></work-image>
+
+<work-callout>
+<h3>My goal is to work as a full-time Frontend developer on exciting projects and learn new things.</h3></work-callout>
+
 <work-image-with-text headline="This is the second image with text headline" right>
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque possimus corrupti error, culpa commodi id sapiente deserunt nihil, non unde esse exercitationem quam odio ratione veritatis maiores, quibusdam praesentium porro a voluptatibus facere eum nesciunt perferendis. Cupiditate, pariatur tenetur rem eligendi facilis mollitia doloribus numquam, architecto exercitationem nisi incidunt eos quia, earum necessitatibus ducimus quis adipisci possimus cumque. Repellat, animi?
 </work-image-with-text>
+
+<work-image url="desktop@2x.jpg" right></work-image>

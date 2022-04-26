@@ -69,7 +69,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   gap: var(--wrapper-gap-y) var(--wrapper-gap-x);
-  margin-block-end: var(--section-space-80);
+  margin-block-end: calc(var(--section-space-80) / 1.2);
 }
 
 .image__text > * {
