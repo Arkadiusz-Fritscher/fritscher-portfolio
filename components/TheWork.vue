@@ -9,15 +9,7 @@ export default {
 
   async fetch() {
     this.projects = await this.$content()
-      .only([
-        'title',
-        'slug',
-        'description',
-        'order',
-        'updatedAt',
-        'services',
-        'thumbnail',
-      ])
+      .only(['title', 'slug', 'description', 'order', 'services', 'thumbnail'])
       .sortBy('order', 'desc')
       .fetch()
       .catch(() => {

@@ -3,9 +3,21 @@ title: Personal Portfolio
 description: 'Empower your NuxtJS application with @nuxt/content module: write in a content/ directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a Git-based Headless CMS.'
 slug: 'portfolio'
 order: 1
+date: '09.01.2022'
 services:
   - Design
   - Development
+stack:
+  - HTML
+  - CSS
+  - TailwindCss
+  - Vue 2
+  - Nuxt.js
+
+links:
+  github: http://github.com
+  live: http://google.com
+
 thumbnail: 'kasper-rasmussen-ecryPq45-_g-unsplash'
 ---
 

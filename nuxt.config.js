@@ -7,7 +7,7 @@ const createSitemapRoutes = async () => {
   if (projects && projects.length > 0) {
     projects.forEach((project) => {
       routes.push({
-        url: project.path,
+        url: project.slug,
         lastmod: project.updatedAt,
       });
     });
@@ -77,7 +77,7 @@ export default {
 
   // Nuxt Content Sitemap
   sitemap: {
-    // hostname: 'http://localhost:3000',
+    hostname: process.env.main_base_URL,
     gzip: true,
     defaults: {
       changefreq: 'weekly',
