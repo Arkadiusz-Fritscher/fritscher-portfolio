@@ -4,7 +4,7 @@ export default {};
 
 <template>
   <section id="contact">
-    <div class="flex flex-col items-center">
+    <div class="flex flex-col items-center" data-animate="element">
       <div class="contact__text text-center">
         Have a Job opportunity? <br />
         Let's chat!

@@ -94,7 +94,12 @@ export default {
         >watch full project</span
       >
     </div>
-    <article v-for="project in projects" :key="project.slug" class="project">
+    <article
+      v-for="project in projects"
+      :key="project.slug"
+      class="project"
+      data-animate="element"
+    >
       <router-link :to="{ name: 'slug', params: { slug: project.slug } }">
         <figure>
           <picture>

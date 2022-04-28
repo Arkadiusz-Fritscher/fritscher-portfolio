@@ -47,6 +47,7 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    'nuxt-gsap-module',
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
@@ -93,5 +94,11 @@ export default {
 
   server: {
     host: '0.0.0.0', // default: localhost,
+  },
+
+  gsap: {
+    extraPlugins: {
+      scrollTrigger: true,
+    },
   },
 };

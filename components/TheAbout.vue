@@ -30,12 +30,12 @@ export default {
 
 <template>
   <section id="about">
-    <BaseCallout
+    <BaseCallout data-animate="element"
       >My goal is to work as a full-time Frontend developer on exciting projects
       and learn new things.
     </BaseCallout>
 
-    <article class="about">
+    <article class="about" data-animate="element">
       <div class="about__text__container">
         <div class="about__wrapper" data-scroll="sticky">
           <h3 class="about__headline text-h1">
@@ -68,6 +68,7 @@ export default {
     <BaseSkills
       v-for="skill in skills"
       :key="skill.type"
+      data-animate="element"
       :headline="skill.headline"
       :type="skill.type"
       :info="skill.info"

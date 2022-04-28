@@ -5,8 +5,11 @@ export default {
 </script>
 
 <template>
-  <header class="flex justify-center">
-    <h1 class="hero__text text-hero font-semibold sm:text-center">
+  <header class="flex justify-center" data-animate="trigger">
+    <h1
+      class="hero__text text-hero font-semibold sm:text-center"
+      data-animate="element"
+    >
       Self Taught Frontend Developer based in Mainz
     </h1>
   </header>
